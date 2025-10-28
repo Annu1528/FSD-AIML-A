@@ -1,0 +1,16 @@
+.card {
+  background-color: rgba(255, 217, 0, 0.81);
+  color: rgb(205, 61, 61);
+  border: 2px solid rgb(145, 239, 145);
+  width: 400px;
+  height: 400px;
+  padding: 2%;
+}
+.card img {
+  width: 250px;
+  height: 200px;
+}
+.book-list {
+  display: flex;
+  justify-content: space-evenly;
+}
