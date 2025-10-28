@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Search</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-music"></i> Music Search</h1>
+      <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" class="theme-checkbox">
+        <label for="theme-switch" class="theme-label">
+          <i class="fas fa-sun"></i>
+          <i class="fas fa-moon"></i>
+          <span class="theme-ball"></span>
+        </label>
+      </div>
+    </header>
+
+    <div class="search-container">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search for artists or songs..." value="drake">
+        <button id="searchBtn"><i class="fas fa-search"></i> Search</button>
+      </div>
+      <div class="filters">
+        <select id="entityFilter">
+          <option value="song">Songs</option>
+          <option value="album">Albums</option>
+          <option value="musicVideo">Music Videos</option>
+        </select>
+        <select id="limitFilter">
+          <option value="10">10 results</option>
+          <option value="25" selected>25 results</option>
+          <option value="50">50 results</option>
+        </select>
+        <select id="sortFilter">
+          <option value="popular">Most Popular</option>
+          <option value="recent">Most Recent</option>
+          <option value="name">Name</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>Loading music...</p>
+    </div>
+
+    <div id="errorMessage" class="error-message hidden">
+      <i class="fas fa-exclamation-triangle"></i>
+      <p>Failed to load music. Please try again.</p>
+    </div>
+
+    <div class="results-info hidden" id="resultsInfo">
+      <p>Showing <span id="resultsCount">0</span> results for "<span id="searchTermDisplay"></span>"</p>
+    </div>
+
+    <div class="table-container">
+      <table id="songsTable">
+        <thead>
+          <tr>
+            <th data-sort="name">Name <i class="fas fa-sort"></i></th>
+            <th data-sort="artist">Artist <i class="fas fa-sort"></i></th>
+            <th>Album</th>
+            <th data-sort="price">Price <i class="fas fa-sort"></i></th>
+            <th>Duration</th>
+            <th>Genre</th>
+            <th>Preview</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <footer>
+      <p>Powered by iTunes API</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
